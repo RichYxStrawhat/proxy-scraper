@@ -4,15 +4,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#
-# AUTHOR : RICHY                                              #
-# WRITTEN ON : 23/10/2021                                     #
-# GITHUB : https://github.com/rixhy                           #
-# LANGUAGE : PYTHON 3.9.5                                     #
-# THANKS FOR USING MY CODE, FEEL FREE TO CONTACT ME FOR HELP  #
-#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#
-
-
 
 import requests
 import os
@@ -20,16 +11,11 @@ import time
 from colorama import Fore
 
 
-#style--------------------------------------------------------
 r = Fore.RED
 w = Fore.WHITE
 os.system('mode 83, 22')
 f = open('proxies.txt','wb')
-#--------------------------------------------------------------
 
-# PROXY TYPES "http" "https" "socks4" "socks5"
-
-#cmd-----------------------------------------------------------------------------------------------------------------
 def http():
   r1 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all")
   f.write(r1.content)
@@ -37,20 +23,20 @@ def http():
   print(f'{r}[{r}{w}${w}{r}]{r} {w}Successfully scraped http proxies.')
 
 def https():
-  r1 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=https&timeout=10000&country=all")
-  f.write(r1.content)
+  r2 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=https&timeout=10000&country=all")
+  f.write(r2.content)
   f.close()
   print(f'{r}[{r}{w}${w}{r}]{r} {w}Successfully scraped https proxies.')
 
 def socks4():
-  r1 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all")
-  f.write(r1.content)
+  r3 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all")
+  f.write(r3.content)
   f.close()
   print(f'{r}[{r}{w}${w}{r}]{r} {w}Successfully scraped socks4 proxies.')
 
 def socks5():
-  r1 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=Socks5&timeout=10000&country=all")
-  f.write(r1.content)
+  r4 = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=Socks5&timeout=10000&country=all")
+  f.write(r3.content)
   f.close()
   print(f'{r}[{r}{w}${w}{r}]{r} {w}Successfully scraped socks5 proxies')
 
@@ -84,9 +70,8 @@ def main():
     socks5()
     time.sleep(3)
     main()
-#------------------------------------------------------------------
+
 
 if __name__ == "__main__":
   main()
 
-#------------------------------------ THE END ---------------------------------------
